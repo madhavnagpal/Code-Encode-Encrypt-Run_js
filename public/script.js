@@ -28,12 +28,12 @@ clear3.click(() => {
 });
 
 encodeBtn.click((e) => {
-  let data = btoa(jsCode.text());
+  let data = btoa(jsCode.val());
   encodedData.text(data);
 });
 
 encryptBtn.click((e) => {
-  let data = encodedData.text();
+  let data = encodedData.val();
   let newData = "";
   for (let i = 0; i < data.length; i++) {
     //check lower
@@ -50,5 +50,6 @@ encryptBtn.click((e) => {
     newData += item;
   }
   encryptedData.val(newData);
+  document.getElementById("encryptedData").value = newData;
   encryptedData.text(newData);
 });
